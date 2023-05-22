@@ -55,13 +55,31 @@
 <body>
 
     <div class="container">
-        <h1 class="text-center">HOTELS</h1>
-        <?php foreach($hotels as $elem){ ?>
-                <ul>
-                    <li><?php echo $elem['name'] ?></li>
-                </ul>
-        <?php } ?>
-        <p></p>
+        <h1 class="text-center my-4">HOTELS</h1>
+        <table class="table table-striped my-4">
+            <thead>
+                <!-- TITOLI COLONNE -->
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col" class="text-center">Parking</th>
+                    <th scope="col" class="text-center">Vote</th>
+                    <th scope="col" class="text-center">Distance To Center</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($hotels as $elem){ ?>
+                    <!-- RIGHE CICLATE IN BASE ALL'ARRAY -->
+                    <tr>
+                        <td><?php echo $elem['name'] ?></td>
+                        <td><?php echo $elem['description'] ?></td>
+                        <td class="text-center"><?php echo $elem['parking'] ?></td>
+                        <td class="text-center"><?php echo $elem['vote'] ?></td>
+                        <td class="text-center"><?php echo $elem['distance_to_center'] ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
 
     <!-- BOOTSTRAP JS -->
